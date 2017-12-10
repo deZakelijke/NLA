@@ -32,7 +32,11 @@ function [L,Q] = DandC(T)
 
     D = zeros(n,n);
     D(1:k, 1:k) = D1;
-    D(k+1:n, k+1:n) = D2;
-    D = D + (beta*z)*z';
+    D(k+1:n, k+1:n) = D2
+    %D = D + (beta*z)*z'
+
+    % Doe bisectie methode
+    [Q, L] = bisection(D, beta, z);
+
     [Q,L] = eig(D);
 end

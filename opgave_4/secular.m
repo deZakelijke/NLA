@@ -6,5 +6,5 @@ function val = secular(l, beta, z, d)
     for i = 1:n
         val = val + (z(i)^2 / (d(i) - l));
     end
-    val = 1 + val * beta
+    val = 1 + val * beta;
 end
